@@ -96,6 +96,12 @@ YouTube:
 
 ---
 
+## 🎥 Vídeo Pitch
+
+👉 https://youtu.be/8bi7kcp1GFY?si=CWKXuSM3hDhR5XuB
+
+---
+
 ## ▶️ Como Executar Localmente
 
 ### Clonar o repositório
@@ -209,3 +215,6 @@ https://javascan-iot-1.onrender.com/swagger-ui/index.html#/
 
 ### Vídeo
 https://youtu.be/T6WK75eiOZU?si=ctrHacP2BOBkL68b
+
+### Vídeo Pitch
+https://youtu.be/8bi7kcp1GFY?si=CWKXuSM3hDhR5XuB

@@ -1,136 +1,182 @@
-AgroScan API
-Descrição do Projeto
+# 🌱 AgroScan API
 
-O AgroScan API é uma solução desenvolvida em Java utilizando Spring Boot para auxiliar na análise da viabilidade de cultivo em diferentes condições ambientais.
-A aplicação permite o cadastro e gerenciamento de usuários, vegetais, solos, climas, corpos celestes, requisitos de cultivo e simulações, fornecendo uma plataforma completa para avaliação de cenários agrícolas.
-Além disso, a API utiliza autenticação JWT para garantir segurança no acesso aos recursos e HATEOAS para navegação entre endpoints.
+Sistema desenvolvido em Java com Spring Boot para gerenciamento e simulação de cultivo agrícola em diferentes condições ambientais.
 
-----------------------------------------------------------------------------------------------------------------------------------------
-Tecnologias Utilizadas
+---
 
-Java 21
-Spring Boot
-Spring Data JPA
-Spring Security
-JWT Authentication
-Swagger OpenAPI
-HATEOAS
-H2 Database
-Gradle
-Lombok
-Funcionalidades
-Cadastro de Usuários
-Cadastro de Vegetais
-Cadastro de Solos
-Cadastro de Climas
-Cadastro de Corpos Celestes
-Cadastro de Requisitos Vegetais
-Cadastro de Relatórios de Viabilidade
-Simulação de Cultivo
-Autenticação com JWT
-Documentação automática com Swagger
-Tratamento global de exceções
-Validação de dados com Bean Validation
-Estrutura do Projeto
-----------------------------------------------------------------------------------------------------------------------------------------
+## 🚀 Tecnologias Utilizadas
 
-O projeto foi organizado seguindo a arquitetura em camadas:
+* ☕ Java 21
+* 🌱 Spring Boot
+* 🗄️ Spring Data JPA
+* 🔐 Spring Security
+* 🎫 JWT Authentication
+* 📖 Swagger OpenAPI
+* 🔗 HATEOAS
+* 🛢️ H2 Database
+* ⚙️ Gradle
+* 📦 Lombok
 
-Controller
-Service
-Repository
-DTO Request
-DTO Response
-Mapper
-Security
-Exception
-Model
+---
 
-Essa estrutura facilita a manutenção, escalabilidade e organização da aplicação.
+## 📋 Funcionalidades
 
-----------------------------------------------------------------------------------------------------------------------------------------
-Segurança
+### 👤 Usuários
 
-A API utiliza autenticação baseada em JSON Web Token (JWT).
+* Cadastro de usuários
+* Consulta de usuários
+* Atualização de usuários
+* Exclusão de usuários
+
+### 🌿 Vegetais
+
+* Cadastro de vegetais
+* Consulta de vegetais
+* Atualização de vegetais
+* Exclusão de vegetais
+
+### 🌎 Solos
+
+* Cadastro de solos
+* Consulta de solos
+* Atualização de solos
+* Exclusão de solos
+
+### ☁️ Climas
+
+* Cadastro de climas
+* Consulta de climas
+* Atualização de climas
+* Exclusão de climas
+
+### 🪐 Corpos Celestes
+
+* Cadastro de corpos celestes
+* Consulta de corpos celestes
+* Atualização de corpos celestes
+* Exclusão de corpos celestes
+
+### 📊 Simulações
+
+* Simulação de cultivo
+* Cálculo de viabilidade
+* Armazenamento dos resultados
+* Histórico de análises
+
+### 🔒 Segurança
+
+* Login autenticado
+* Geração de Token JWT
+* Rotas protegidas
+* Integração com Swagger Authorize
+
+---
+
+## 🏗️ Arquitetura do Projeto
+
+O projeto foi desenvolvido seguindo o padrão em camadas:
+
+```text
+controller
+service
+repository
+dto
+mapper
+security
+exception
+model
+```
+
+---
+
+## 📖 Documentação Swagger
+
+A documentação da API pode ser acessada através do Swagger:
+
+```text
+http://localhost:8080/swagger-ui/index.html
+```
+
+Através do Swagger é possível:
+
+* Testar endpoints
+* Realizar autenticação JWT
+* Consultar parâmetros
+* Visualizar respostas da API
+
+---
+
+## 🔐 Autenticação JWT
 
 Fluxo de autenticação:
 
-O usuário realiza login.
-A API gera um token JWT.
-O token é enviado nas requisições protegidas.
-O Spring Security valida o token e libera o acesso aos endpoints autorizados.
+1. Realizar login
+2. Receber token JWT
+3. Autorizar no Swagger
+4. Consumir endpoints protegidos
 
-----------------------------------------------------------------------------------------------------------------------------------------
-Documentação da API
+---
 
-A documentação dos endpoints é disponibilizada através do Swagger OpenAPI.
+## 🔗 HATEOAS
 
-Por meio da interface é possível:
+A API implementa HATEOAS para navegação entre recursos, retornando links relacionados juntamente com os dados da resposta.
 
-Visualizar todos os endpoints
-Realizar testes diretamente pelo navegador
-Autenticar utilizando JWT
-Consultar parâmetros e respostas da API
-Modelagem Avançada
+---
 
-----------------------------------------------------------------------------------------------------------------------------------------
-O projeto implementa conceitos avançados de persistência:
+## 🧬 Modelagem Avançada
 
-Herança
+O projeto implementa os seguintes conceitos avançados de persistência:
 
-Utilização de uma classe base compartilhada entre entidades através de:
+### 🏛️ Herança
 
-@MappedSuperclass
-Embedded
+* `@MappedSuperclass`
 
-Utilização de objeto incorporado através de:
+### 📦 Embedded
 
-@Embeddable
-@Embedded
-Chave Composta
+* `@Embeddable`
+* `@Embedded`
 
-Implementação utilizando:
+### 🆔 Chave Composta
 
-@EmbeddedId
-Simulação de Cultivo
+* `@EmbeddedId`
 
-A funcionalidade principal da aplicação é a simulação de cultivo.
+---
 
-Através das informações cadastradas é possível avaliar a viabilidade de uma determinada cultura considerando:
+## 🛠️ Tratamento de Exceções
 
-Vegetal
-Solo
-Clima
-Corpo Celeste
-Condições ambientais
+Tratamento global implementado utilizando:
 
-O sistema gera uma classificação de viabilidade e armazena os resultados para futuras consultas.
+* ResourceNotFoundException
+* GlobalExceptionHandler
 
-----------------------------------------------------------------------------------------------------------------------------------------
-Tratamento de Exceções
+Garantindo respostas padronizadas para erros e validações.
 
-Foi implementado um tratamento global de exceções utilizando:
+---
 
-ResourceNotFoundException
-GlobalExceptionHandler
+## 🎯 Objetivo do Projeto
 
-Dessa forma a API retorna respostas padronizadas para erros de validação e recursos não encontrados.
+Desenvolver uma API REST completa para gerenciamento e simulação de cenários agrícolas, permitindo a análise de viabilidade de cultivo com base em informações ambientais, climáticas e estruturais.
 
-----------------------------------------------------------------------------------------------------------------------------------------
-Resultados
+---
 
-O projeto foi desenvolvido com sucesso, atendendo aos requisitos de:
+## ✅ Status do Projeto
 
-API REST
-Persistência de dados
-Segurança com JWT
-HATEOAS
-Swagger
-CRUD completo
-Validações
-Relacionamentos entre entidades
-Modelagem avançada
-Conclusão
+* ✅ CRUD Completo
+* ✅ DTO Request/Response
+* ✅ Validation
+* ✅ Mapper
+* ✅ Service
+* ✅ Repository
+* ✅ Swagger
+* ✅ JWT
+* ✅ HATEOAS
+* ✅ Exception Handler
+* ✅ Herança
+* ✅ Embedded
+* ✅ Chave Composta
+* ✅ Simulação de Cultivo
+* ✅ Spring Security
 
-O AgroScan API demonstra a aplicação prática dos conceitos de desenvolvimento de APIs REST utilizando Spring Boot, segurança com JWT, persistência com JPA e boas práticas de arquitetura em camadas.
-A solução desenvolvida permite gerenciar informações agrícolas e realizar simulações de cultivo de forma organizada, segura e escalável.
+---
+
+## 👨‍💻 Desenvolvido com Java + Spring Boot

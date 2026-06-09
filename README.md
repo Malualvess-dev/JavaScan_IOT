@@ -1,182 +1,211 @@
 # 🌱 AgroScan API
 
-Sistema desenvolvido em Java com Spring Boot para gerenciamento e simulação de cultivo agrícola em diferentes condições ambientais.
+## 🚀 Sobre o Projeto
+
+O AgroScan é uma API REST desenvolvida em Java com Spring Boot para auxiliar na gestão agrícola inteligente através da integração de informações sobre vegetais, solos, clima, usuários, simulações de cultivo e condições de diferentes corpos celestes.
+
+Além da aplicação na agricultura tradicional, o projeto também explora cenários de agricultura espacial, simulando condições de cultivo em ambientes como Marte, contribuindo para pesquisas relacionadas à economia espacial e sustentabilidade futura.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🎯 Objetivo
 
-* ☕ Java 21
-* 🌱 Spring Boot
-* 🗄️ Spring Data JPA
-* 🔐 Spring Security
-* 🎫 JWT Authentication
-* 📖 Swagger OpenAPI
-* 🔗 HATEOAS
-* 🛢️ H2 Database
-* ⚙️ Gradle
-* 📦 Lombok
+Fornecer uma plataforma moderna, segura e escalável para gerenciamento de dados agrícolas, permitindo análises e simulações de viabilidade de cultivo em diferentes ambientes.
 
 ---
 
-## 📋 Funcionalidades
+## 🛠️ Tecnologias Utilizadas
 
-### 👤 Usuários
-
-* Cadastro de usuários
-* Consulta de usuários
-* Atualização de usuários
-* Exclusão de usuários
-
-### 🌿 Vegetais
-
-* Cadastro de vegetais
-* Consulta de vegetais
-* Atualização de vegetais
-* Exclusão de vegetais
-
-### 🌎 Solos
-
-* Cadastro de solos
-* Consulta de solos
-* Atualização de solos
-* Exclusão de solos
-
-### ☁️ Climas
-
-* Cadastro de climas
-* Consulta de climas
-* Atualização de climas
-* Exclusão de climas
-
-### 🪐 Corpos Celestes
-
-* Cadastro de corpos celestes
-* Consulta de corpos celestes
-* Atualização de corpos celestes
-* Exclusão de corpos celestes
-
-### 📊 Simulações
-
-* Simulação de cultivo
-* Cálculo de viabilidade
-* Armazenamento dos resultados
-* Histórico de análises
-
-### 🔒 Segurança
-
-* Login autenticado
-* Geração de Token JWT
-* Rotas protegidas
-* Integração com Swagger Authorize
+- Java 21
+- Spring Boot
+- Spring Data JPA
+- Spring Security
+- JWT (JSON Web Token)
+- HATEOAS
+- Swagger / OpenAPI
+- Gradle
+- H2 Database
+- Render (Deploy)
 
 ---
 
-## 🏗️ Arquitetura do Projeto
+## 🏗️ Arquitetura
 
-O projeto foi desenvolvido seguindo o padrão em camadas:
+O projeto segue arquitetura em camadas:
 
 ```text
-controller
-service
-repository
-dto
-mapper
-security
-exception
-model
+Controller
+↓
+Service
+↓
+Repository
+↓
+Banco de Dados
+```
+
+Componentes auxiliares:
+
+```text
+DTO
+Mapper
+Security
+Exception Handler
 ```
 
 ---
 
-## 📖 Documentação Swagger
+## 🔐 Segurança
 
-A documentação da API pode ser acessada através do Swagger:
+A API utiliza autenticação JWT para proteção dos endpoints.
+
+Fluxo:
 
 ```text
-http://localhost:8080/swagger-ui/index.html
+Login
+↓
+Geração do Token JWT
+↓
+Authorize no Swagger
+↓
+Acesso aos endpoints protegidos
 ```
 
-Através do Swagger é possível:
+---
 
-* Testar endpoints
-* Realizar autenticação JWT
-* Consultar parâmetros
-* Visualizar respostas da API
+## 📚 Documentação da API
+
+Swagger/OpenAPI:
+
+👉 https://javascan-iot-1.onrender.com/swagger-ui/index.html#/
 
 ---
 
-## 🔐 Autenticação JWT
+## 🌐 Deploy
 
-Fluxo de autenticação:
+Aplicação hospedada no Render:
 
-1. Realizar login
-2. Receber token JWT
-3. Autorizar no Swagger
-4. Consumir endpoints protegidos
+👉 https://javascan-iot-1.onrender.com
 
 ---
 
-## 🔗 HATEOAS
+## 🎥 Vídeo de Apresentação
 
-A API implementa HATEOAS para navegação entre recursos, retornando links relacionados juntamente com os dados da resposta.
+YouTube:
 
----
-
-## 🧬 Modelagem Avançada
-
-O projeto implementa os seguintes conceitos avançados de persistência:
-
-### 🏛️ Herança
-
-* `@MappedSuperclass`
-
-### 📦 Embedded
-
-* `@Embeddable`
-* `@Embedded`
-
-### 🆔 Chave Composta
-
-* `@EmbeddedId`
+👉 https://youtu.be/T6WK75eiOZU?si=ctrHacP2BOBkL68b
 
 ---
 
-## 🛠️ Tratamento de Exceções
+## ▶️ Como Executar Localmente
 
-Tratamento global implementado utilizando:
+### Clonar o repositório
 
-* ResourceNotFoundException
-* GlobalExceptionHandler
+```bash
+git clone https://github.com/Malualvess-dev/JavaScan_IOT.git
+```
 
-Garantindo respostas padronizadas para erros e validações.
+### Entrar na pasta
+
+```bash
+cd JavaScan_IOT
+```
+
+### Executar a aplicação
+
+```bash
+gradlew bootRun
+```
+
+ou
+
+```bash
+./gradlew bootRun
+```
+
+### Gerar arquivo JAR
+
+```bash
+gradlew bootJar
+```
+
+Arquivo gerado:
+
+```text
+build/libs/agroscan-api-0.0.1-SNAPSHOT.jar
+```
+
+Executar:
+
+```bash
+java -jar build/libs/agroscan-api-0.0.1-SNAPSHOT.jar
+```
 
 ---
 
-## 🎯 Objetivo do Projeto
+## 📋 Principais Funcionalidades
 
-Desenvolver uma API REST completa para gerenciamento e simulação de cenários agrícolas, permitindo a análise de viabilidade de cultivo com base em informações ambientais, climáticas e estruturais.
-
----
-
-## ✅ Status do Projeto
-
-* ✅ CRUD Completo
-* ✅ DTO Request/Response
-* ✅ Validation
-* ✅ Mapper
-* ✅ Service
-* ✅ Repository
-* ✅ Swagger
-* ✅ JWT
-* ✅ HATEOAS
-* ✅ Exception Handler
-* ✅ Herança
-* ✅ Embedded
-* ✅ Chave Composta
-* ✅ Simulação de Cultivo
-* ✅ Spring Security
+- Cadastro de Usuários
+- Cadastro de Vegetais
+- Cadastro de Solos
+- Cadastro de Climas
+- Cadastro de Corpos Celestes
+- Simulações de Cultivo
+- Autenticação JWT
+- Documentação Swagger
+- Navegação HATEOAS
+- Deploy em Ambiente Cloud
 
 ---
 
-## 👨‍💻 Desenvolvido com Java + Spring Boot
+## 📊 Recursos Implementados
+
+✅ API RESTful
+
+✅ Spring Security
+
+✅ JWT Authentication
+
+✅ Swagger/OpenAPI
+
+✅ HATEOAS
+
+✅ DTOs e Mappers
+
+✅ Tratamento Global de Exceções
+
+✅ Modelagem JPA
+
+✅ Herança
+
+✅ Embedded
+
+✅ Chave Composta
+
+✅ Deploy em Produção
+
+---
+
+## 📌 Informações para Avaliação
+
+- Projeto desenvolvido utilizando Java 21 e Spring Boot.
+- API documentada com Swagger/OpenAPI.
+- Endpoints protegidos por JWT.
+- Deploy realizado em ambiente cloud utilizando Render.
+- Demonstração completa disponível em vídeo.
+- Documentação centralizada neste README conforme requisitos da disciplina.
+
+---
+
+## 🔗 Links do Projeto
+
+### GitHub
+https://github.com/Malualvess-dev/JavaScan_IOT
+
+### Deploy
+https://javascan-iot-1.onrender.com
+
+### Swagger
+https://javascan-iot-1.onrender.com/swagger-ui/index.html#/
+
+### Vídeo
+https://youtu.be/T6WK75eiOZU?si=ctrHacP2BOBkL68b
